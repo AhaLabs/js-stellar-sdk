@@ -952,7 +952,7 @@ export class Spec {
             this.scValToNative(elm, valTypes[i]),
           ) as T;
         }
-        throw new TypeError(`Type ${typeDef} was not vec, but ${scv} is`);
+        throw new TypeError(`Type 'typeDef' was not vec, but 'scv' is. \n\n  typeDef: ${JSON.stringify(typeDef, null, 2)} \n\n  scv: ${JSON.stringify(scv, null, 2)}`);
       }
 
       case xdr.ScValType.scvAddress().value:
