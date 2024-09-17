@@ -280,4 +280,15 @@ describe("Custom Types Tests", function () {
       (await this.context.client.tuple_strukt({ tuple_strukt: arg })).result,
     ).to.deep.equal(res);
   });
+
+  it("get_object_vec_option", async function () {
+    const expectedResult = [
+      { a: 1, b: true, c: "hi" },
+      { a: 2, b: false, c: "hello" }
+    ];
+
+    const result = await this.context.client.get_object_vec_option();
+    expect(result.result).to.deep.equal(expectedResult);
+  });
+
 });
